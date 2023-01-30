@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Marina093/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Marina093/frontend-project-46/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7a45e350fbbf53e1eaa0/maintainability)](https://codeclimate.com/github/Marina093/frontend-project-46/maintainability)
 
 #### Compared flat files JSON
 
