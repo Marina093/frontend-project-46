@@ -13,23 +13,25 @@ const stringify = (data, depth) => {
 const stylish = (data) => {
   const iter = (node, depth) => {
     const name = node.keyName;
-    const nodeType = node.type;
-    if (nodeType === 'deleted') {
-      return `${getIndent(depth)}- ${name}: ${stringify(node.value1, depth)}`;
+    switch (node.type) {
+      case 'nested': {
+        const arr = node.children.flatMap((child) => iter(child, depth + 1));
+        return `${getIndent(depth)}  ${name}: {\n${arr.join('\n')}\n${getIndent(depth)}  }`;
+      }
+      case 'added':
+        return `${getIndent(depth)}+ ${name}: ${stringify(node.value2, depth)}`;
+
+      case 'deleted':
+        return `${getIndent(depth)}- ${name}: ${stringify(node.value1, depth)}`;
+
+      case 'changed': {
+        const str1 = `${getIndent(depth)}- ${name}: ${stringify(node.value1, depth)}`;
+        const str2 = `${getIndent(depth)}+ ${name}: ${stringify(node.value2, depth)}`;
+        return [str1, str2];
+      }
+      default:
+        return `${getIndent(depth)}  ${name}: ${stringify(node.value, depth)}`;
     }
-    if (nodeType === 'added') {
-      return `${getIndent(depth)}+ ${name}: ${stringify(node.value2, depth)}`;
-    }
-    if (nodeType === 'changed') {
-      const str1 = `${getIndent(depth)}- ${name}: ${stringify(node.value1, depth)}`;
-      const str2 = `${getIndent(depth)}+ ${name}: ${stringify(node.value2, depth)}`;
-      return [str1, str2];
-    }
-    if (nodeType === 'nested') {
-      const arr = node.children.flatMap((child) => iter(child, depth + 1));
-      return `${getIndent(depth)}  ${name}: {\n${arr.join('\n')}\n${getIndent(depth)}  }`;
-    }
-    return `${getIndent(depth)}  ${name}: ${stringify(node.value, depth)}`;
   };
   const resultArray = data.flatMap((node) => iter(node, 1));
   const resultString = `{\n${resultArray.join('\n')}\n}`;
