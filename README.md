@@ -11,5 +11,8 @@
 #### Compared flat files YAML
 
 [![asciicast](https://asciinema.org/a/HlvBQs17HRwSUvbfbckgsX56K.svg)](https://asciinema.org/a/HlvBQs17HRwSUvbfbckgsX56K)
- 
+
+#### Compared nested files JSON and nested files YAML (stylish format)
+
+[![asciicast](https://asciinema.org/a/J1R6c3f6knI8GisJ2cMhnNuKP.svg)](https://asciinema.org/a/J1R6c3f6knI8GisJ2cMhnNuKP) 
 
