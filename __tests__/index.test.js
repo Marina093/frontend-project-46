@@ -12,7 +12,9 @@ const readFixture = (filepath) => fs.readFileSync(getFixturePath(filepath), 'utf
 
 test.each([
   ['file1.json', 'file2.json', undefined, 'result.txt'],
-  ['file1.yml', 'file2.yml', undefined, 'result.txt'],
+  ['file1.yml', 'file2.yml', 'stylish', 'result.txt'],
+  ['file1.json', 'file2.yml', 'stylish', 'result.txt'],
+  ['file1.yml', 'file2.json', 'stylish', 'result.txt'],
 ])('testCheck', (filename1, filename2, formatName, expectedName) => {
   const file1 = getFixturePath(filename1);
   const file2 = getFixturePath(filename2);
