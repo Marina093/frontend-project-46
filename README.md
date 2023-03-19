@@ -31,7 +31,6 @@
   
   ```properties
   make install 
-  or 
   npm ci
   ```
 
