@@ -12,7 +12,14 @@
 
 [![asciicast](https://asciinema.org/a/HlvBQs17HRwSUvbfbckgsX56K.svg)](https://asciinema.org/a/HlvBQs17HRwSUvbfbckgsX56K)
 
-#### Compared nested files JSON and nested files YAML (stylish format)
+#### Compared nested files JSON and nested files YAML ('stylish' format)
 
 [![asciicast](https://asciinema.org/a/J1R6c3f6knI8GisJ2cMhnNuKP.svg)](https://asciinema.org/a/J1R6c3f6knI8GisJ2cMhnNuKP) 
 
+#### Compared files with nested structure in format 'plain'
+
+[![asciicast](https://asciinema.org/a/ILpW0GUvhvisKIhipN24S7vnE.svg)](https://asciinema.org/a/ILpW0GUvhvisKIhipN24S7vnE)
+
+#### Compared files with nested structure in format 'json'
+
+[![asciicast](https://asciinema.org/a/drgBVSV9tJnceURBmFIfbcoev.svg)](https://asciinema.org/a/drgBVSV9tJnceURBmFIfbcoev)
